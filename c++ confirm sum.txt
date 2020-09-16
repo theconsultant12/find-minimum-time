@@ -1,0 +1,39 @@
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& nums, int target) {
+        vector<int> vect; 
+  
+    
+        
+        for (int i =0; i< nums.size(); i++){
+            for (int j = 0; j< nums.size(); j++){
+                if (nums[i] + nums[j] == target){
+                    vect.push_back(i);     
+                    if (checkVector(vect, nums[j])== true){
+                    vect.push_back(j);
+                }       
+            }
+                    
+        }
+        }
+    //cout<< "["<< nums[i] << nums[j] << " ]"<<endl;
+                    //cout << "Because nums ["<<i<<"] + nums["<< j <<"] == "<<target<<", we return ["<< i <<", "<<j<<"]. "<<endl;
+            
+        cout<< "[";
+      
+        for (int s = 0; s<vect.size(); s++){
+          cout << vect[s]<<" ,";
+      }  
+        cout<< "]";
+        return vect;
+    }
+    bool checkVector(vector <int> list, int q){
+        bool m;
+        for (int i = 0; i<list.size();i++){
+            if(q == list[i]){
+                m == true;
+            }
+        }
+        return m;
+    }
+};
